@@ -1,12 +1,13 @@
 #!/bin/sh
 set -e
 
-PHP_CONF_DIR=/usr/local/etc/php/conf.d
+PHP_CONF_DIR=/etc/php7/conf.d
 
 # handle xdebug
-cat > ${PHP_CONF_DIR}/xdebug.ini << END_OF_XDEBUG_CONF
-xdebug.remote_enable=${XDEBUG_ENABLED:-0}
-xdebug.remote_autostart=0
-END_OF_XDEBUG_CONF
+[ ${XDEBUG_ENABLED:-0} == 1 ] && { \
+    echo 'zend_extension=xdebug.so'; \
+    echo 'xdebug.remote_enable=1'; \
+    echo 'xdebug.remote_autostart=0'; \
+} | tee ${PHP_CONF_DIR}/xdebug.ini > /dev/null
 
 exec $@
