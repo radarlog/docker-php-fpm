@@ -40,9 +40,9 @@ RUN set -ex \
 		echo 'catch_workers_output = yes'; \
 	} | tee php-fpm.d/zz-docker.conf
 
-COPY entrypoint.sh /bin/entrypoint.sh
+COPY entrypoint-php.sh /usr/local/bin/
 
 EXPOSE 9000
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint-php.sh"]
 CMD ["php-fpm7"]
