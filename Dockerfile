@@ -13,7 +13,7 @@ RUN apk --no-cache add --update php7 php7-fpm \
     php7-iconv \
     php7-mbstring \
     php7-opcache \
-    php7-pdo php7-pdo_mysql php7-pdo_sqlite \
+    php7-pdo php7-pdo_mysql php7-mysqli php7-pdo_sqlite \
     php7-session \
     php7-tokenizer \
     php7-xml php7-simplexml php7-xmlreader php7-xmlwriter \
