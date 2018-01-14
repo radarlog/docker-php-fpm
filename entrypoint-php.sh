@@ -8,6 +8,7 @@ PHP_CONF_DIR=/etc/php7/conf.d
     echo 'zend_extension=xdebug.so'; \
     echo 'xdebug.remote_enable=1'; \
     echo 'xdebug.remote_autostart=0'; \
+    echo 'max_execution_time=300'; \
 } | tee ${PHP_CONF_DIR}/xdebug.ini > /dev/null
 
 exec $@
