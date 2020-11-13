@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.12
 
 MAINTAINER Ilian Ranguelov <me@radarlog.net>
 
