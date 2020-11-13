@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-MAINTAINER Ilian Ranguelov <me@radarlog.net>
+LABEL maintainer="Ilian Ranguelov <me@radarlog.net>"
 
 # install php7 and some extensions
 RUN apk --no-cache add --update php7 php7-fpm \
